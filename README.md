@@ -24,13 +24,13 @@ In no particular order:
 - Place Features (e.g. free wifi, chargings ports, kind staff)
 - Place Photos
 - Place Profiles
-..* Rating
-..* Written Reviews
-..* Multiple Photos 
+  - Rating
+  - Written Reviews
+  - Multiple Photos 
 - Users can add Places
 - User Ratings
 - User Accounts
-..* Rating History 
-..* Review History
+  - Rating History 
+  - Review History
 
 
