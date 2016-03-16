@@ -5,6 +5,7 @@ html{
 }
 
 body {
+  background: #ddd;
   font-family: 'Montserrat', sans-serif;
   height: 100%;
   margin: 0 auto;;
@@ -46,6 +47,24 @@ h1 {
       margin: 0 auto;
       width: 90%;
     }
+    
+    #find-me-button {
+      border: solid;
+      border-color: #4c4d57;
+      border-radius: 180px;
+      background: #4c4d57;
+      color: #ddd;
+      font-size: 20px;
+      margin-top: 20px;
+      padding: 8px;
+      text-decoration: none;
+    }
+      #find-me-button:hover {
+        background: #ddd;
+        color: #4c4d57;
+        cursor: pointer;
+        cursor: hand;
+      }
   
   .right-content {
     display: inline-block;

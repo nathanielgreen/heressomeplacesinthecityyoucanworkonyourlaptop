@@ -76,14 +76,17 @@ function findPlaces(chosenRadius) {
 // Map Functions + jQuery
 function resetView(radius) {
   var circle = L.circle([userLat, userLon], radius, {
-      color: 'blue',
-      fillColor: '#46c8ff',
-      fillOpacity: 0.1
+      color: '#4c4d57',
+      fillColor: '#4c4d57',
+      fillOpacity: 0.5
   });
+  circle.addTo(map);
   map.setView([userLat, userLon], 4); 
 };
 
-$( "#findme" ).click(function() {
+$( "#find-me-button" ).click(function() {
+  console.log("findme worked");
+  resetView(1000);
   findPlaces(1000);
   map.setView([userLat, userLon], 14); 
 });
