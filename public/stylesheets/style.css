@@ -24,7 +24,14 @@ h1 {
   text-decoration: bold;
 }
 
-
+.content-break {
+  background: #4c4d57;
+  color: #4c4d57;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 1px;
+  width: 70%;
+}
 
 .wrapper {
   display: inline-block;
@@ -48,22 +55,49 @@ h1 {
       width: 90%;
     }
     
-    #find-me-button {
-      border: solid;
-      border-color: #4c4d57;
-      border-radius: 180px;
-      background: #4c4d57;
-      color: #ddd;
-      font-size: 20px;
-      margin-top: 20px;
-      padding: 8px;
-      text-decoration: none;
+    #find-me-div{
+      margin: 20px;
+    } 
+      #find-me-button {
+        border: solid;
+        border-color: #4c4d57;
+        border-radius: 180px;
+        background: #4c4d57;
+        color: #ddd;
+        font-size: 20px;
+        margin-top: 20px;
+        padding: 12px;
+        text-decoration: none;
+      }
+        #find-me-button:hover {
+          background: #ddd;
+          color: #4c4d57;
+          cursor: pointer;
+          cursor: hand;
+        }
+        #find-me-button-default {
+          font-size: 10px;
+        }
+
+    #choose-radius-div {
+      margin: 10px;
     }
-      #find-me-button:hover {
-        background: #ddd;
-        color: #4c4d57;
-        cursor: pointer;
-        cursor: hand;
+      #choose-radius-text {
+        border: solid;
+        border-color: #fff;
+        border-radius: 180px;
+        font-size: 16px;
+        padding: 10px;
+      }
+      #choose-radius-button {
+        border: solid;
+        border-color: #4c4d57;
+        border-radius: 180px;
+        background: #4c4d57;
+        color: #ddd;
+        font-size: 16px;
+        padding: 10px;
+        text-decoration: none;
       }
   
   .right-content {

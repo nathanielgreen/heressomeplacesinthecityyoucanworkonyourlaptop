@@ -25,7 +25,7 @@ Features with strikethrough have been implemented.
 In no particular order:
 - Landing Page **in progress**
 - Search Box (for specific places)
-- Search 'Near Me' with specific radius **in progress**
+- ~~Search 'Near Me' with specific radius~~
 - List All Places Button
 - Place Features (e.g. free wifi, chargings ports, kind staff)
 - Place Photos

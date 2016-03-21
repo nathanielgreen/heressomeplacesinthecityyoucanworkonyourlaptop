@@ -39,8 +39,23 @@
 
     <div class="left-content">
       <div id="left-header">
-        <h1> Here's some places in the city you can work on your laptop </h1>
-        <button id="find-me-button">Find Places Near Me</button>
+
+        <h1> RemoteMe </h1>
+
+        <div id="find-me-div">
+            <button id="find-me-button">
+              Find Me
+              <p id="find-me-button-default"> (Defaults to 1000m radius) </p>
+            </button>
+        </div>
+        <hr class="content-break">
+        <div id="choose-radius-div">
+            <input id="choose-radius-text" type="text" 
+            placeholder="radius in metres">
+            <button id="choose-radius-button">Search Near Me</button>
+        </div>
+        <hr class="content-break">
+
       </div>
     </div>
 
