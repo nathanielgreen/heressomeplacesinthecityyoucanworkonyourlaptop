@@ -59,7 +59,14 @@ function findPlaces(chosenRadius) {
         var coordsDifference = distance(userLat, userLon, data.places[i].coords[0], data.places[i].coords[1]);
 
         if (coordsDifference < chosenRadius ) {
-        
+
+          var markers = L.marker([data.places[i].coords[0], data.places[i].coords[1]])
+          markers.addTo(map).bindPopup(
+            "<div class='markerPopup'>" 
+              + data.places[i].name  
+            + "</div>"
+          );
+
         } 
         else { 
           console.log('marker not placed, place is out of chosen radius');

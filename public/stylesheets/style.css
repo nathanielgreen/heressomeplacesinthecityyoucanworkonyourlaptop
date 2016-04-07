@@ -114,27 +114,30 @@ h1 {
   
 /* Marker CSS */
 .leaflet-popup-content-wrapper {
-  background: #FAEBD7;
+  background: #ddd;
   border: solid;
-  border-color: #e1d3c1;
-  border-radius: 5px;
+  border-color: #4c4d57;
+  border-radius: 2px;
   border-width: 2px;
   padding: 0px;
 }
 
 .leaflet-popup-tip {
-  background: #FAEBD7;
+  background: #4c4d57;
+  border-color: #4c4d57;
+  border-radius: 2px;
+  border-width: 2px;
+  padding: 0px;
 }
 
 .leaflet-popup-content {
-  background: #FAEBD7;
   border-radius: 5px;
   padding: 0px;
   padding-bottom: 25px;
 }
 
 .markerPopup {
-  color: #f44336;
+  color: #000;
   font-family: inherit;
   font-size: 14px;
   height: 150px;
