@@ -80,6 +80,24 @@ function findPlaces(chosenRadius) {
 
 
 
+// Add New Places
+function addPlaces() {
+  $.getJSON("dummydata.json", function(data) {
+
+    var newPlace = { "name":"test", "coords":[1, 2] };
+
+    data.places.push(newPlace);
+
+    $.post('dummydata.json', newPlace)
+    .success(function(){
+      alert('Your Changes have been saved to database');
+    });
+  });
+};
+// Add New Places End
+
+
+
 // Map Functions + jQuery
 function resetView(radius) {
   var circle = L.circle([userLat, userLon], radius, {
@@ -102,5 +120,9 @@ $( "#choose-radius-button" ).click(function() {
   var chosenRadius = $( '#choose-radius-text' ).val(); 
   resetView(chosenRadius);
   findPlaces(chosenRadius);
+});
+
+$( "#add-new-button" ).click(function() {
+  addPlaces();
 });
 // Map Function + jQuery End
