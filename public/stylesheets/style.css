@@ -6,6 +6,7 @@ html{
 
 body {
   background: #ddd;
+  color: #4c4d57;
   font-family: 'Montserrat', sans-serif;
   height: 100%;
   margin: 0 auto;;
@@ -99,7 +100,42 @@ h1 {
         padding: 10px;
         text-decoration: none;
       }
-  
+    
+    #add-new-div {
+    }
+      #add-new-div h3{
+        text-decoration: underline;
+      }
+      #add-new-name {
+        border: solid;
+        border-color: #fff;
+        border-radius: 180px;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px;
+      }
+      #add-new-address {
+        border: solid;
+        border-color: #fff;
+        border-radius: 180px;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px;
+      }
+      #add-new-button {
+        border: solid;
+        border-color: #4c4d57;
+        border-radius: 180px;
+        background: #4c4d57;
+        color: #ddd;
+        display: block;
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px;
+        text-decoration: none;
+      }
   .right-content {
     display: inline-block;
     height: 100%;
