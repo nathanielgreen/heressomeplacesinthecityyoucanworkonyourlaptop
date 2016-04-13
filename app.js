@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 var pg      = require('pg');
 var app     = express();
 var port    =   process.env.PORT || 8080;
+var routes = require('./server/routes/index');
 
 pg.defaults.ssl = true;
 
@@ -29,14 +31,10 @@ pg.connect(conString, function(err, client, done) {
 });
 
 
+app.set('views', path.join(__dirname, 'views'));
+app.use('/', routes);
 // Stylesheets + Scripts
 app.use(express.static(__dirname + '/public'));
-
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
-//
-
 
 app.listen(port);
 console.log('listening on port ' + port);
