@@ -99,11 +99,20 @@ function addPlaces() {
 
 
 // Map Functions + jQuery
+
+function deletePolygon(myid) {
+  map.removeLayer(myid);
+  return false;
+};
+
 function resetView(radius) {
-  var circle = L.circle([userLat, userLon], radius, {
-      color: '#3b1261',
-      fillColor: '#3b1261',
-      fillOpacity: 0.1
+  if (typeof circle !== 'undefined') {
+    deletePolygon(circle);
+  };
+  circle = L.circle([userLat, userLon], radius, {
+    color: '#3b1261',
+    fillColor: '#3b1261',
+    fillOpacity: 0.1
   });
   circle.addTo(map);
   map.setView([userLat, userLon], 17); 
