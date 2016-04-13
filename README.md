@@ -9,7 +9,7 @@ listed on the interactive map.
 ## Live Version
 
 A live interactive version of the project is available at
-http://remoteme.ngreen.co .
+http://remoteme.herokuapp.co .
 **NOTE:** Live version may not be the most up-to-date version of the project.
 
 ## Techonologies Currently Used 
