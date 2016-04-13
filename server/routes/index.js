@@ -7,3 +7,5 @@ var pg = require('pg');
 router.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, '../', '../', 'client', 'views', 'index.html'));
 });
+
+module.exports = router;

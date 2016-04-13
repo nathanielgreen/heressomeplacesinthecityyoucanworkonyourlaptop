@@ -135,3 +135,6 @@ $( "#add-new-button" ).click(function() {
   addPlaces();
 });
 // Map Function + jQuery End
+
+
+

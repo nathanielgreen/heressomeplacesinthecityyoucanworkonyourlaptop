@@ -4,7 +4,11 @@ var path = require('path');
 var pg      = require('pg');
 var app     = express();
 var port    =   process.env.PORT || 8080;
+
 var routes = require('./server/routes/index');
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'express');
 
 pg.defaults.ssl = true;
 
@@ -31,10 +35,12 @@ pg.connect(conString, function(err, client, done) {
 });
 
 
-app.set('views', path.join(__dirname, 'views'));
 app.use('/', routes);
+
 // Stylesheets + Scripts
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, './client', 'public')));
 
 app.listen(port);
 console.log('listening on port ' + port);
+
+module.export = app;
