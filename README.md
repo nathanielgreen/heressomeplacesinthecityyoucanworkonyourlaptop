@@ -26,22 +26,22 @@ http://remoteme.ngreen.co .
 Features with strikethrough have been implemented.
 
 In no particular order:
-- ~~Add Express Backend~~
-- ~~Implement React~~
-- ~~Search 'Near Me' with specific radius~~
-- Rebuild current progress in React **in progress**
-- Landing Page **in progress**
-- Search Box (for specific places)
-- List All Places Button
-- Place Features (e.g. free wifi, chargings ports, kind staff)
-- Place Photos
-- Place Profiles
+- [x] ~~Add Express Backend~~
+- [x] ~~Implement React~~
+- [x] ~~Search 'Near Me' with specific radius~~
+- [ ] Rebuild current progress in React **in progress**
+- [ ] Landing Page **in progress**
+- [ ] Search Box (for specific places)
+- [ ] List All Places Button
+- [ ] Place Features (e.g. free wifi, chargings ports, kind staff)
+- [ ] Place Photos
+- [ ] Place Profiles
   - Rating
   - Written Reviews
   - Multiple Photos 
-- Users can add Places
-- User Ratings
-- User Accounts
+- [ ] Users can add Places
+- [ ] User Ratings
+- [ ] User Accounts
   - Rating History 
   - Review History
 
