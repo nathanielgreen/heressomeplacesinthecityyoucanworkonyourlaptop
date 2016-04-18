@@ -104,6 +104,17 @@ function resetView(radius) {
   map.setView([userLat, userLon], 17); 
 };
 
+function coordsFromAddress(address) {
+  $.getJSON(
+    'https://maps.googleapis.com/maps/api/geocode/json?address=' 
+    + address 
+    + '&key=' 
+    + googleApi.key, function(data) {
+      console.log(data.results[0].geometry.location.lat);   
+      console.log(data.results[0].geometry.location.lng);   
+    });
+};
+
 $( "#find-me-button" ).click(function() {
   console.log("findme worked");
   resetView(1000);
@@ -116,6 +127,18 @@ $( "#choose-radius-button" ).click(function() {
   resetView(chosenRadius);
   findPlaces(chosenRadius);
 });
+
+$( "#add-new-button" ).click(function() {
+  var name    = $( '#add-new-name').val();
+  var address = $( '#add-new-address' ).val();
+  coordsFromAddress(address);
+
+  $.get("/data/new", function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+  });
+
+});
+
 // Map Function + jQuery End
 
 
