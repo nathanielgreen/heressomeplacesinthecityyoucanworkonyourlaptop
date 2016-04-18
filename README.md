@@ -20,6 +20,7 @@ http://remoteme.herokuapp.co .
 - Node.js
 - Express
 - React
+- Heroku Postgres Database
 
 ## Future Features
 
