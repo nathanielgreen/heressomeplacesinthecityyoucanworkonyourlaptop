@@ -52,18 +52,19 @@ function distance(lat1, lon1, lat2, lon2) {
 
 // Marker Placement
 function findPlaces(chosenRadius) {
-    $.getJSON("dummydata.json", function(data) {
+    $.getJSON('/data', function(data) {
 
-      for (i=0; i < data.places.length; i++) {
 
-        var coordsDifference = distance(userLat, userLon, data.places[i].coords[0], data.places[i].coords[1]);
+      for (i=0; i < data.length; i++) {
+
+        var coordsDifference = distance(userLat, userLon, data[i].coords[0], data[i].coords[1]);
 
         if (coordsDifference < chosenRadius ) {
 
-          var markers = L.marker([data.places[i].coords[0], data.places[i].coords[1]])
+          var markers = L.marker([data[i].coords[0], data[i].coords[1]])
           markers.addTo(map).bindPopup(
             "<div class='markerPopup'>" 
-              + data.places[i].name  
+              + data[i].name  
             + "</div>"
           );
 
@@ -80,26 +81,7 @@ function findPlaces(chosenRadius) {
 
 
 
-// Add New Places
-function addPlaces() {
-  $.getJSON("dummydata.json", function(data) {
-
-    var newPlace = { "name":"test", "coords":[1, 2] };
-
-    data.places.push(newPlace);
-
-    $.post('dummydata.json', newPlace)
-    .success(function(){
-      alert('Your Changes have been saved to database');
-    });
-  });
-};
-// Add New Places End
-
-
-
 // Map Functions + jQuery
-
 function deletePolygon(myid) {
   map.removeLayer(myid);
   return false;
@@ -130,11 +112,6 @@ $( "#choose-radius-button" ).click(function() {
   resetView(chosenRadius);
   findPlaces(chosenRadius);
 });
-
-$( "#add-new-button" ).click(function() {
-  addPlaces();
-});
 // Map Function + jQuery End
-
 
 
