@@ -57,12 +57,16 @@ function findPlaces(chosenRadius) {
 
       for (i=0; i < data.length; i++) {
 
+        if (typeof marker !== 'undefined') {
+          deletePolygon(marker);
+        };
+
         var coordsDifference = distance(userLat, userLon, data[i].coords[0], data[i].coords[1]);
 
         if (coordsDifference < chosenRadius ) {
 
-          var markers = L.marker([data[i].coords[0], data[i].coords[1]])
-          markers.addTo(map).bindPopup(
+          marker = L.marker([data[i].coords[0], data[i].coords[1]])
+          marker.addTo(map).bindPopup(
             "<div class='markerPopup'>" 
               + data[i].name  
             + "</div>"
