@@ -47,4 +47,11 @@ In no particular order:
   - Rating History 
   - Review History
 
+## Known Bugs
 
+Bugs with a strikethrough have been fixed for the current version.
+
+- [x] ~~Markers not removed when they are out of a new chosen radius~~
+- [x] ~~Loop breaks when null data is entered~~
+- [ ] Null data (empty fields) can be entered into the database.
+ 

@@ -5,9 +5,9 @@ html{
 }
 
 body {
-  background: #ddd;
+  background: #fff;
   color: #4c4d57;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   height: 100%;
   margin: 0 auto;;
   width: 100%;
@@ -34,20 +34,18 @@ h1 {
 }
 
 .wrapper {
-  display: inline-block;
+  display: flex;
   height: 100%;
   margin: 0;
   width: 100%;
 }
   .left-content {
-    background: #ddd;
-    display: inline-block;
-    height: 100%;
-    margin: 0 auto;
-    overflow: auto;
+    background: #f2f2f2;
+    box-shadow: 5px 5px 5px #888888;
+    flex: 1;
+    margin: 20px;
+    padding-top: 20px;
     text-align: center;
-    width: 30%; 
-    top: 0;
   }
     #left-header {
       height: 20%;
@@ -63,14 +61,14 @@ h1 {
         border-color: #4c4d57;
         border-radius: 180px;
         background: #4c4d57;
-        color: #ddd;
+        color: #f2f2f2;
         font-size: 20px;
         margin-top: 20px;
         padding: 12px;
         text-decoration: none;
       }
         #find-me-button:hover {
-          background: #ddd;
+          background: #f2f2f2;
           color: #4c4d57;
           cursor: pointer;
           cursor: hand;
@@ -94,13 +92,16 @@ h1 {
         border-color: #4c4d57;
         border-radius: 180px;
         background: #4c4d57;
-        color: #ddd;
+        color: #f2f2f2;
         font-size: 16px;
         padding: 10px;
         text-decoration: none;
       }
     
     #add-new-div {
+    }
+    .add-new-div {
+      display: flex;
     }
       #add-new-div h3{
         text-decoration: underline;
@@ -109,7 +110,7 @@ h1 {
         border: solid;
         border-color: #fff;
         border-radius: 180px;
-        display: inline-block;
+        flex: 1;
         font-size: 16px;
         margin: 5px;
         padding: 10px;
@@ -119,8 +120,8 @@ h1 {
         border-color: #4c4d57;
         border-radius: 180px;
         background: #4c4d57;
-        color: #ddd;
-        display: block;
+        color: #f2f2f2;
+        flex: 1;
         font-size: 16px;
         margin: 5px;
         padding: 10px;
@@ -128,10 +129,10 @@ h1 {
       }
 
   .right-content {
-    display: inline-block;
-    height: 100%;
-    margin: 0;
-    width: 69%;  
+    box-shadow: 5px 5px 5px #888888;
+    flex: 2;
+    margin: 20px;
+    margin-left: 0px;
   }
     #map {
       height: 100%;
@@ -141,7 +142,7 @@ h1 {
   
 /* Marker CSS */
 .leaflet-popup-content-wrapper {
-  background: #ddd;
+  background: #f2f2f2;
   border: solid;
   border-color: #4c4d57;
   border-radius: 2px;
@@ -202,7 +203,7 @@ h1 {
 
     .markerLink:hover {
       background: #f44336;
-      color: #ddd;
+      color: #f2f2f2;
     }
 /* Marker CSS End */
 
