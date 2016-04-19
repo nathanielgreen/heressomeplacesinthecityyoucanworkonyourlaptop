@@ -105,7 +105,7 @@ h1 {
       #add-new-div h3{
         text-decoration: underline;
       }
-      #add-new-name {
+      .add-new-text {
         border: solid;
         border-color: #fff;
         border-radius: 180px;
@@ -114,16 +114,7 @@ h1 {
         margin: 5px;
         padding: 10px;
       }
-      #add-new-address {
-        border: solid;
-        border-color: #fff;
-        border-radius: 180px;
-        display: inline-block;
-        font-size: 16px;
-        margin: 5px;
-        padding: 10px;
-      }
-      #add-new-button {
+      .add-new-button {
         border: solid;
         border-color: #4c4d57;
         border-radius: 180px;
@@ -135,6 +126,7 @@ h1 {
         padding: 10px;
         text-decoration: none;
       }
+
   .right-content {
     display: inline-block;
     height: 100%;

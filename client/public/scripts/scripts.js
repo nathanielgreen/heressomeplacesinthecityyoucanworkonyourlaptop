@@ -52,26 +52,29 @@ function distance(lat1, lon1, lat2, lon2) {
 
 // Marker Placement
 function findPlaces(chosenRadius) {
+
     $.getJSON('/data', function(data) {
 
+      if (typeof marker !== 'undefined') {
+      };
+
+      markers = L.layerGroup([]);
 
       for (i=0; i < data.length; i++) {
 
-        if (typeof marker !== 'undefined') {
-          deletePolygon(marker);
-        };
-
+        if (data[i].coords == null) { continue; };
+        
         var coordsDifference = distance(userLat, userLon, data[i].coords[0], data[i].coords[1]);
-
-        if (coordsDifference < chosenRadius ) {
+        if (coordsDifference < chosenRadius) {
 
           marker = L.marker([data[i].coords[0], data[i].coords[1]])
+          markers.addLayer(marker);
+          console.log(markers);
           marker.addTo(map).bindPopup(
             "<div class='markerPopup'>" 
               + data[i].name  
             + "</div>"
           );
-
         } 
         else { 
           console.log('marker not placed, place is out of chosen radius');
@@ -101,7 +104,7 @@ function resetView(radius) {
     fillOpacity: 0.1
   });
   circle.addTo(map);
-  map.setView([userLat, userLon], 17); 
+  map.setView([userLat, userLon], 14); 
 };
 
 function coordsFromAddress(address) {
@@ -110,8 +113,9 @@ function coordsFromAddress(address) {
     + address 
     + '&key=' 
     + googleApi.key, function(data) {
-      console.log(data.results[0].geometry.location.lat);   
-      console.log(data.results[0].geometry.location.lng);   
+      var addressCoords = [data.results[0].geometry.location.lat, data.results[0].geometry.location.lng];   
+      $("#lat").val(addressCoords[0]);
+      $("#lng").val(addressCoords[1]);
     });
 };
 
@@ -128,13 +132,24 @@ $( "#choose-radius-button" ).click(function() {
   findPlaces(chosenRadius);
 });
 
-$( "#add-new-button" ).click(function() {
-  var name    = $( '#add-new-name').val();
-  var address = $( '#add-new-address' ).val();
+$( "#generate" ).click(function() {
+  var address = $( "#address" ).val();
   coordsFromAddress(address);
+});
 
-  $.get("/data/new", function(data, status){
-      alert("Data: " + data + "\nStatus: " + status);
+$( "#add-place" ).click(function() {
+  var name = $('#add-new-name').val();
+  $.ajax({
+    url: '/data',
+    type: 'POST',
+    data: {
+      'name': name,
+      'lat': $( "lat" ).val(),
+      'lng': $( "lng" ).val(),
+    },
+    success: function(){
+      console.log("post worked");
+    }
   });
 
 });
