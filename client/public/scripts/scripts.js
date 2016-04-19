@@ -51,7 +51,7 @@ function distance(lat1, lon1, lat2, lon2) {
 
 
 // Marker Placement
-function findPlaces(chosenRadius) {
+function findPlaces(chosenRadius, coords = [userLat, userLon]) {
 
     $.getJSON('/data', function(data) {
 
@@ -67,7 +67,7 @@ function findPlaces(chosenRadius) {
 
         if (data[i].coords == null) { continue; };
         
-        var coordsDifference = distance(userLat, userLon, data[i].coords[0], data[i].coords[1]);
+        var coordsDifference = distance(coords[0], coords[1], data[i].coords[0], data[i].coords[1]);
         if (coordsDifference < chosenRadius) {
 
           marker = L.marker([data[i].coords[0], data[i].coords[1]])
@@ -91,29 +91,52 @@ function findPlaces(chosenRadius) {
 
 
 
-// Map Functions + jQuery
+// Map Functions
 function deletePolygon(myid) {
   map.removeLayer(myid);
   return false;
 };
 
-function resetView(radius) {
+function resetCircle() {
   if (typeof circle !== 'undefined') {
     deletePolygon(circle);
   };
-  circle = L.circle([userLat, userLon], radius, {
-    color: '#3b1261',
-    fillColor: '#3b1261',
-    fillOpacity: 0.1
-  });
-  circle.addTo(map);
-  map.setView([userLat, userLon], 14); 
+};
+
+function resetView(radius) {
+  var chosenAddress = $( '#choose-radius-address' ).val();
+  coordsFromAddress(chosenAddress);
+  if (chosenAddress == '') {
+    circle = L.circle([userLat, userLon], radius, {
+      color: '#3b1261',
+      fillColor: '#3b1261',
+      fillOpacity: 0.1
+    });
+    circle.addTo(map);
+    map.setView([userLat, userLon], 14); 
+  } else { 
+    setTimeout(function () {
+      circle = L.circle([addressCoords[0], addressCoords[1]], radius, {
+        color: '#3b1261',
+        fillColor: '#3b1261',
+        fillOpacity: 0.1
+      });
+      circle.addTo(map);
+      map.setView([addressCoords[0], addressCoords[1]], 14); 
+    }, 500);
+  };
 };
 
 function customView() {
+  resetCircle();
   var chosenRadius = $( '#choose-radius-text' ).val(); 
-  resetView(chosenRadius);
-  findPlaces(chosenRadius);
+  if (chosenRadius == '') {
+    resetView(1000);
+    findPlaces(1000);
+  } else {
+    resetView(chosenRadius);
+    findPlaces(chosenRadius);
+  };
 }
 
 function coordsFromAddress(address) {
@@ -122,21 +145,22 @@ function coordsFromAddress(address) {
     + address 
     + '&key=' 
     + googleApi.key, function(data) {
-      var addressCoords = [data.results[0].geometry.location.lat, data.results[0].geometry.location.lng];   
+      addressCoords = [data.results[0].geometry.location.lat, data.results[0].geometry.location.lng];   
       $("#lat").val(addressCoords[0]);
       $("#lng").val(addressCoords[1]);
     });
 };
+// Map Functions End
 
-$( "#find-me-button" ).click(function() {
-  console.log("findme worked");
-  resetView(1000);
-  findPlaces(1000);
-  map.setView([userLat, userLon], 14); 
-});
 
+
+// jQuery
 $( "#choose-radius-button" ).click(function() {
   customView();
+});
+
+$( "#choose-radius-here" ).click(function() {
+  customView(); 
 });
 
 $( "#generate" ).click(function() {
@@ -161,6 +185,4 @@ $( "#add-place" ).click(function() {
   customView();
 });
 
-// Map Function + jQuery End
-
-
+// jQuery End

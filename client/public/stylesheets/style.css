@@ -44,39 +44,16 @@ h1 {
     box-shadow: 5px 5px 5px #888888;
     flex: 1;
     margin: 20px;
+    overflow: hidden;
     padding-top: 20px;
     text-align: center;
   }
     #left-header {
-      height: 20%;
+      height: 5%;
       margin: 0 auto;
       width: 90%;
     }
     
-    #find-me-div{
-      margin: 20px;
-    } 
-      #find-me-button {
-        border: solid;
-        border-color: #4c4d57;
-        border-radius: 180px;
-        background: #4c4d57;
-        color: #f2f2f2;
-        font-size: 20px;
-        margin-top: 20px;
-        padding: 12px;
-        text-decoration: none;
-      }
-        #find-me-button:hover {
-          background: #f2f2f2;
-          color: #4c4d57;
-          cursor: pointer;
-          cursor: hand;
-        }
-        #find-me-button-default {
-          font-size: 10px;
-        }
-
     #choose-radius-div {
       margin: 10px;
     }
@@ -91,6 +68,27 @@ h1 {
         font-size: 16px;
         margin: 5px;
         padding: 10px;
+      }
+      #choose-radius-address {
+        border: solid;
+        border-color: #fff;
+        border-radius: 180px;
+        flex: 2;
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px;
+      }
+      #choose-radius-here {
+        border: solid;
+        border-color: #4c4d57;
+        border-radius: 180px;
+        background: #4c4d57;
+        color: #f2f2f2;
+        flex: 1;
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px;
+        text-decoration: none;
       }
       #choose-radius-button {
         border: solid;
