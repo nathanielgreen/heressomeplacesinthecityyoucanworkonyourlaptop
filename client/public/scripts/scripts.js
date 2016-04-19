@@ -55,11 +55,13 @@ function findPlaces(chosenRadius) {
 
     $.getJSON('/data', function(data) {
 
-      markers = L.layerGroup([]);
-
       if (typeof marker !== 'undefined') {
+        markers.eachLayer(function (layer) {
+          map.removeLayer(layer);
+        });
       };
 
+      markers = L.layerGroup([]);
 
       for (i=0; i < data.length; i++) {
 
