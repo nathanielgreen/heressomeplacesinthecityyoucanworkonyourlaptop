@@ -80,11 +80,16 @@ h1 {
     #choose-radius-div {
       margin: 10px;
     }
+    .choose-radius-div {
+      display: flex;
+    }
       #choose-radius-text {
         border: solid;
         border-color: #fff;
         border-radius: 180px;
+        flex: 2;
         font-size: 16px;
+        margin: 5px;
         padding: 10px;
       }
       #choose-radius-button {
@@ -93,10 +98,18 @@ h1 {
         border-radius: 180px;
         background: #4c4d57;
         color: #f2f2f2;
+        flex: 1;
         font-size: 16px;
+        margin: 5px;
         padding: 10px;
         text-decoration: none;
       }
+        #choose-radius-button:hover {
+          background: #f2f2f2;
+          color: #4c4d57;
+          cursor: pointer;
+          cursor: hand;
+        }
     
     #add-new-div {
     }
@@ -127,6 +140,10 @@ h1 {
         padding: 10px;
         text-decoration: none;
       }
+        .add-new-button:hover {
+          background: #f2f2f2;
+          color: #4c4d57  
+        }
 
   .right-content {
     box-shadow: 5px 5px 5px #888888;
