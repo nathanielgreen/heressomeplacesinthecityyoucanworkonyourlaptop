@@ -55,10 +55,11 @@ function findPlaces(chosenRadius) {
 
     $.getJSON('/data', function(data) {
 
+      markers = L.layerGroup([]);
+
       if (typeof marker !== 'undefined') {
       };
 
-      markers = L.layerGroup([]);
 
       for (i=0; i < data.length; i++) {
 
@@ -107,6 +108,12 @@ function resetView(radius) {
   map.setView([userLat, userLon], 14); 
 };
 
+function customView() {
+  var chosenRadius = $( '#choose-radius-text' ).val(); 
+  resetView(chosenRadius);
+  findPlaces(chosenRadius);
+}
+
 function coordsFromAddress(address) {
   $.getJSON(
     'https://maps.googleapis.com/maps/api/geocode/json?address=' 
@@ -127,9 +134,7 @@ $( "#find-me-button" ).click(function() {
 });
 
 $( "#choose-radius-button" ).click(function() {
-  var chosenRadius = $( '#choose-radius-text' ).val(); 
-  resetView(chosenRadius);
-  findPlaces(chosenRadius);
+  customView();
 });
 
 $( "#generate" ).click(function() {
@@ -138,20 +143,20 @@ $( "#generate" ).click(function() {
 });
 
 $( "#add-place" ).click(function() {
-  var name = $('#add-new-name').val();
+  var name = $('#name').val();
   $.ajax({
     url: '/data',
     type: 'POST',
     data: {
       'name': name,
-      'lat': $( "lat" ).val(),
-      'lng': $( "lng" ).val(),
+      'lat': $( "#lat" ).val(),
+      'lng': $( "#lng" ).val(),
     },
     success: function(){
       console.log("post worked");
     }
   });
-
+  customView();
 });
 
 // Map Function + jQuery End
