@@ -140,14 +140,17 @@ function customView() {
 }
 
 function coordsFromAddress(address) {
+  var addingAddress = $( '#address' ).val();
   $.getJSON(
     'https://maps.googleapis.com/maps/api/geocode/json?address=' 
     + address 
     + '&key=' 
     + googleApi.key, function(data) {
       addressCoords = [data.results[0].geometry.location.lat, data.results[0].geometry.location.lng];   
-      $("#lat").val(addressCoords[0]);
-      $("#lng").val(addressCoords[1]);
+      if (addingAddress == address) {
+        $("#lat").val(addressCoords[0]);
+        $("#lng").val(addressCoords[1]);
+      };
     });
 };
 // Map Functions End
