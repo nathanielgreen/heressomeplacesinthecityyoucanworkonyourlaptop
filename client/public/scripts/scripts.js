@@ -159,10 +159,6 @@ $( "#choose-radius-button" ).click(function() {
   customView();
 });
 
-$( "#choose-radius-here" ).click(function() {
-  customView(); 
-});
-
 $( "#generate" ).click(function() {
   var address = $( "#address" ).val();
   coordsFromAddress(address);

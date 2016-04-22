@@ -41,7 +41,7 @@ h1 {
 }
   .left-content {
     background: #f2f2f2;
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 5px 5px 5px #ccc;
     flex: 1;
     margin: 20px;
     overflow: hidden;
@@ -64,7 +64,7 @@ h1 {
         border: solid;
         border-color: #fff;
         border-radius: 180px;
-        flex: 2;
+        flex: 1;
         font-size: 16px;
         margin: 5px;
         padding: 10px;
@@ -73,22 +73,10 @@ h1 {
         border: solid;
         border-color: #fff;
         border-radius: 180px;
-        flex: 2;
-        font-size: 16px;
-        margin: 5px;
-        padding: 10px;
-      }
-      #choose-radius-here {
-        border: solid;
-        border-color: #4c4d57;
-        border-radius: 180px;
-        background: #4c4d57;
-        color: #f2f2f2;
         flex: 1;
         font-size: 16px;
         margin: 5px;
         padding: 10px;
-        text-decoration: none;
       }
       #choose-radius-button {
         border: solid;
@@ -144,7 +132,7 @@ h1 {
         }
 
   .right-content {
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 5px 5px 5px #ccc;
     flex: 2;
     margin: 20px;
     margin-left: 0px;
