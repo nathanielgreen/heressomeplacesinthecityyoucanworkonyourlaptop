@@ -50,8 +50,24 @@ function distance(lat1, lon1, lat2, lon2) {
 
 
 
+// isEmpty Function
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+function isEmpty(obj) {
+  if (obj == null) return true;
+  if (obj.length > 0)    return false;
+  if (obj.length === 0)  return true;
+  for (var key in obj) {
+    if (hasOwnProperty.call(obj, key)) return false;
+  }
+  return true;
+};
+// isEmpty Function End
+
+
+
 // Marker Placement
-function findPlaces(chosenRadius, coords = [userLat, userLon]) {
+function findPlaces(radius, coords) {
 
     $.getJSON('/data', function(data) {
 
@@ -68,7 +84,7 @@ function findPlaces(chosenRadius, coords = [userLat, userLon]) {
         if (data[i].coords == null) { continue; };
         
         var coordsDifference = distance(coords[0], coords[1], data[i].coords[0], data[i].coords[1]);
-        if (coordsDifference < chosenRadius) {
+        if (coordsDifference < radius) {
 
           marker = L.marker([data[i].coords[0], data[i].coords[1]])
           markers.addLayer(marker);
@@ -76,6 +92,9 @@ function findPlaces(chosenRadius, coords = [userLat, userLon]) {
           marker.addTo(map).bindPopup(
             "<div class='markerPopup'>" 
               + data[i].name  
+              + "<li>"
+                + data[i].notes
+              + "</li>"
             + "</div>"
           );
         } 
@@ -103,41 +122,36 @@ function resetCircle() {
   };
 };
 
-function resetView(radius) {
-  var chosenAddress = $( '#choose-radius-address' ).val();
-  coordsFromAddress(chosenAddress);
-  if (chosenAddress == '') {
-    circle = L.circle([userLat, userLon], radius, {
-      color: '#3b1261',
-      fillColor: '#3b1261',
-      fillOpacity: 0.1
-    });
-    circle.addTo(map);
-    map.setView([userLat, userLon], 14); 
-  } else { 
-    setTimeout(function () {
-      circle = L.circle([addressCoords[0], addressCoords[1]], radius, {
-        color: '#3b1261',
-        fillColor: '#3b1261',
-        fillOpacity: 0.1
-      });
-      circle.addTo(map);
-      map.setView([addressCoords[0], addressCoords[1]], 14); 
-    }, 500);
+function resetView(radius, address) {
+  circle = L.circle(address, radius, {
+    color: '#3b1261',
+    fillColor: '#3b1261',
+    fillOpacity: 0.1
+  });
+  circle.addTo(map);
+};
+
+function customRadius() {
+  var radius = $( '#choose-radius-text' ).val();
+  if (radius == '') {
+    return 1000
+  } else {
+    return Number(radius);
   };
 };
 
-function customView() {
-  resetCircle();
-  var chosenRadius = $( '#choose-radius-text' ).val(); 
-  if (chosenRadius == '') {
-    resetView(1000);
-    findPlaces(1000);
+function customCoords() {
+  var address = $( "#choose-radius-address" ).val();
+  coordsFromAddress(address);
+  if (address == '') {
+    return [userLat, userLon]
   } else {
-    resetView(chosenRadius);
-    findPlaces(chosenRadius);
+    return coords;
   };
-}
+
+};
+      //$("#lat").val(addressCoords[0]);
+      //$("#lng").val(addressCoords[1]);
 
 function coordsFromAddress(address) {
   $.getJSON(
@@ -145,10 +159,8 @@ function coordsFromAddress(address) {
     + address 
     + '&key=' 
     + googleApi.key, function(data) {
-      addressCoords = [data.results[0].geometry.location.lat, data.results[0].geometry.location.lng];   
-      $("#lat").val(addressCoords[0]);
-      $("#lng").val(addressCoords[1]);
-    });
+      coords = [data.results[0].geometry.location.lat, data.results[0].geometry.location.lng];
+  })
 };
 // Map Functions End
 
@@ -156,7 +168,8 @@ function coordsFromAddress(address) {
 
 // jQuery
 $( "#choose-radius-button" ).click(function() {
-  customView();
+  resetView(customRadius, customCoords);
+  findPlaces(customRadius, customCoords);
 });
 
 $( "#generate" ).click(function() {
@@ -166,18 +179,21 @@ $( "#generate" ).click(function() {
 
 $( "#add-place" ).click(function() {
   var name = $('#name').val();
-  $.ajax({
-    url: '/data',
-    type: 'POST',
-    data: {
-      'name': name,
-      'lat': $( "#lat" ).val(),
-      'lng': $( "#lng" ).val(),
-    },
-    success: function(){
-      console.log("post worked");
-    }
-  });
+  if (name != "") {
+    $.ajax({
+      url: '/data',
+      type: 'POST',
+      data: {
+        'name': name,
+        'lat': $( "#lat" ).val(),
+        'lng': $( "#lng" ).val(),
+        'notes': $( "#notes" ).val(),
+      },
+      success: function(){
+        console.log("post worked");
+      }
+    })
+  }; 
   customView();
 });
 
