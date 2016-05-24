@@ -123,12 +123,13 @@ function resetCircle() {
 };
 
 function resetView(radius, address) {
+  resetCircle();
   circle = L.circle(address, radius, {
     color: '#3b1261',
     fillColor: '#3b1261',
     fillOpacity: 0.1
-  });
-  circle.addTo(map);
+  }).addTo(map);
+  map.setView(address, 13);
 };
 
 function customRadius() {
@@ -141,17 +142,12 @@ function customRadius() {
 };
 
 function customCoords() {
-  var address = $( "#choose-radius-address" ).val();
-  coordsFromAddress(address);
   if (address == '') {
     return [userLat, userLon]
   } else {
     return coords;
   };
-
 };
-      //$("#lat").val(addressCoords[0]);
-      //$("#lng").val(addressCoords[1]);
 
 function coordsFromAddress(address) {
   $.getJSON(
@@ -160,21 +156,33 @@ function coordsFromAddress(address) {
     + '&key=' 
     + googleApi.key, function(data) {
       coords = [data.results[0].geometry.location.lat, data.results[0].geometry.location.lng];
-  })
+  });
 };
 // Map Functions End
 
 
 
 // jQuery
+$( "#choose-radius-address" ).keyup(function() {
+  var address = $( "#choose-radius-address" ).val();
+  coordsFromAddress(address);
+});
+
 $( "#choose-radius-button" ).click(function() {
-  resetView(customRadius, customCoords);
-  findPlaces(customRadius, customCoords);
+  resetView(customRadius(), customCoords());
+  findPlaces(customRadius(), customCoords());
+});
+
+$( "#address" ).keyup(function() {
+  var address = $( "#address" ).val();
+  coordsFromAddress(address);
 });
 
 $( "#generate" ).click(function() {
   var address = $( "#address" ).val();
   coordsFromAddress(address);
+  $( "#lat" ).val(coords[0]);
+  $( "#lng" ).val(coords[1]);
 });
 
 $( "#add-place" ).click(function() {
@@ -194,7 +202,6 @@ $( "#add-place" ).click(function() {
       }
     })
   }; 
-  customView();
 });
 
 // jQuery End
