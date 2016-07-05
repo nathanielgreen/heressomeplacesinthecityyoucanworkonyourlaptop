@@ -19,8 +19,7 @@ http://remoteme.herokuapp.co .
 - HTML & CSS
 - Node.js
 - Express
-- React
-- Heroku Postgres Database
+- PostgreSQL
 
 ## Future Features
 
@@ -28,13 +27,11 @@ Features with strikethrough have been implemented.
 
 In no particular order:
 - [x] ~~Add Express Backend~~
-- [x] ~~Implement React~~
 - [x] ~~Search 'Near Me' with specific radius~~
 - [x] ~~Locations are stored in the database and placed on the map~~
-- [ ] Rebuild current progress in React **in progress**
 - [ ] Landing Page **in progress**
-- [ ] Search Box (for specific places)
-- [ ] List All Places Button
+- [x] ~~Search Box (for specific places)~~
+- [x] ~~Search Defaults to Location and 1000m with no entries~~
 - [ ] Place Features (e.g. free wifi, chargings ports, kind staff)
 - [ ] Place Photos
 - [ ] Place Profiles
