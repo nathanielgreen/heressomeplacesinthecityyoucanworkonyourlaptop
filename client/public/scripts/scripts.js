@@ -142,6 +142,7 @@ function customRadius() {
 };
 
 function customCoords() {
+  var address = $( '#choose-radius-address' ).val();
   if (address == '') {
     return [userLat, userLon]
   } else {
