@@ -151,6 +151,7 @@ function customCoords() {
 };
 
 function coordsFromAddress(address) {
+  var addingAddress = $( '#address' ).val();
   $.getJSON(
     'https://maps.googleapis.com/maps/api/geocode/json?address=' 
     + address 
