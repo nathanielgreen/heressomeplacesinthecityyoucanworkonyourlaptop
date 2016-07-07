@@ -185,6 +185,7 @@ $( "#generate" ).click(function() {
   coordsFromAddress(address);
   $( "#lat" ).val(coords[0]);
   $( "#lng" ).val(coords[1]);
+  tempMarker(coords[0], coords[1]);
 });
 
 $( "#add-place" ).click(function() {
@@ -201,6 +202,8 @@ $( "#add-place" ).click(function() {
       },
       success: function(){
         console.log("post worked");
+        resetView(customRadius(), customCoords());
+        findPlaces(customRadius(), customCoords());
       }
     })
   }; 
