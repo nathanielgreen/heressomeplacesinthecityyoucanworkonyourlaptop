@@ -12,7 +12,7 @@ A live interactive version of the project is available at
 http://remoteme.herokuapp.co .
 **NOTE:** Live version may not be the most up-to-date version of the project.
 
-## Techonologies Currently Used 
+## Techonologies Used 
 
 - Maps are built with Mapbox and Leaflet.js
 - Javascript
@@ -23,7 +23,7 @@ http://remoteme.herokuapp.co .
 
 ## Future Features
 
-Features with strikethrough have been implemented.
+Features with a strikethrough have been implemented.
 
 In no particular order:
 - [x] ~~Add Express Backend~~
