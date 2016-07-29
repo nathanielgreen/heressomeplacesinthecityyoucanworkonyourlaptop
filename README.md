@@ -30,6 +30,7 @@ In no particular order:
 - [x] ~~Search 'Near Me' with specific radius~~
 - [x] ~~Locations are stored in the database and placed on the map~~
 - [ ] Landing Page **in progress**
+- [ ] Mobile View
 - [x] ~~Search Box (for specific places)~~
 - [x] ~~Search Defaults to Location and 1000m with no entries~~
 - [ ] Place Features (e.g. free wifi, chargings ports, kind staff)
