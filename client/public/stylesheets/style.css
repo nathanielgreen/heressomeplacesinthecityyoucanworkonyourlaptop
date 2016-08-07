@@ -27,8 +27,8 @@ h1 {
 .content-break {
   background: #4c4d57;
   color: #4c4d57;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 1px;
   width: 70%;
 }
@@ -42,17 +42,11 @@ h1 {
   .left-content {
     border-radius: 5px;
     background: #f2f2f2;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);V
     flex: 1;
-    margin: 20px;
     overflow: hidden;
     padding-top: 20px;
     text-align: center;
-    transition: all 0.2s ease-in-out;
   }
-    .left-content:hover {
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
-    }
     #left-header {
       height: 5%;
       margin: 0 auto;
@@ -63,25 +57,25 @@ h1 {
       margin: 10px;
     }
     .choose-radius-div {
-      display: flex;
+      display: block;
     }
       #choose-radius-text {
         border: solid;
         border-color: #fff;
         border-radius: 180px;
-        flex: 1;
         font-size: 16px;
         margin: 5px;
         padding: 10px;
+        width: 60%;
       }
       #choose-radius-address {
         border: solid;
         border-color: #fff;
         border-radius: 180px;
-        flex: 1;
         font-size: 16px;
         margin: 5px;
         padding: 10px;
+        width: 80%;
       }
       #choose-radius-button {
         border: solid;
@@ -89,11 +83,11 @@ h1 {
         border-radius: 180px;
         background: #4c4d57;
         color: #f2f2f2;
-        flex: 1;
         font-size: 16px;
         margin: 5px;
         padding: 10px;
         text-decoration: none;
+        width: 100%;
       }
         #choose-radius-button:hover {
           background: #f2f2f2;
@@ -102,10 +96,9 @@ h1 {
           cursor: hand;
         }
     
-    #add-new-div {
-    }
     .add-new-div {
-      display: flex;
+      display: inline-block;
+      width: 100%;
     }
       #add-new-div h3{
         text-decoration: underline;
@@ -114,10 +107,15 @@ h1 {
         border: solid;
         border-color: #fff;
         border-radius: 180px;
-        flex: 1;
         font-size: 16px;
-        margin: 5px;
+        margin: 4px;
         padding: 10px;
+        width: 40%;
+      }
+      .add-new-span {
+        display: block;
+        width:100%;
+        word-break: break-all;
       }
       .add-new-button {
         border: solid;
@@ -125,11 +123,11 @@ h1 {
         border-radius: 180px;
         background: #4c4d57;
         color: #f2f2f2;
-        flex: 1;
         font-size: 16px;
-        margin: 5px;
+        margin: 4px;
         padding: 10px;
         text-decoration: none;
+        width: 45%;
       }
         .add-new-button:hover {
           background: #f2f2f2;
@@ -140,22 +138,16 @@ h1 {
         border-color: #fff;
         border-radius: 30px;
         font-size: 16px;
-        height: 100px;
-        margin: 10px;
-        width: 100%;
+        margin: 4px;
+        padding: 10px;
+        width: 90%;
       }
 
   .right-content {
     border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     flex: 2;
-    margin: 20px;
     margin-left: 0px;
-    transition: all 0.2s ease-in-out;
   }
-    .right-content:hover {
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
-    }
     #map {
       height: 100%;
       margin: 0;
