@@ -109,8 +109,25 @@ function resetMarkers() {
     markers.eachLayer(function (layer) {
       map.removeLayer(layer);
     });
+  }
+  else if (typeof tempMarker !== 'undefined') {
+    tempMarkers.eachLayer(function (layer) {
+      map.removeLayer(layer); 
+    });
   };
 };
+
+function tempMarker(lat, lng){
+  tempMarkers = L.layerGroup([]);
+  tempMarker = L.marker([lat, lng])
+
+  tempMarkers.addLayer(tempMarker);
+  tempMarker.addTo(map).bindPopup(
+      "This is where your marker will appear once added"
+      );
+  map.setView([lat, lng], 13);
+};
+
 // Marker Placement
 
 
