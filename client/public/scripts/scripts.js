@@ -17,7 +17,7 @@ getLocation();
 
 
 // Map Creation
-map = L.map('map').setView([51.4, -0.09], 16); 
+map = L.map('map').setView([51.4, -0.09], 13); 
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: mapBoxAccount.attribution,

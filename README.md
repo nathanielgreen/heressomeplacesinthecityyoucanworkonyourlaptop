@@ -29,6 +29,7 @@ In no particular order:
 - [x] ~~Add Express Backend~~
 - [x] ~~Search 'Near Me' with specific radius~~
 - [x] ~~Locations are stored in the database and placed on the map~~
+- [x] ~~Temporary Marker placed when generating coordinates~~
 - [ ] Landing Page **in progress**
 - [ ] Mobile View
 - [x] ~~Search Box (for specific places)~~
