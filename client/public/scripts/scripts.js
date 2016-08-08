@@ -160,6 +160,18 @@ function coordsFromAddress(address) {
       coords = [data.results[0].geometry.location.lat, data.results[0].geometry.location.lng];
   });
 };
+
+function isDataNull() {
+  var name = $('#name').val();
+  var address = $( "#address" ).val();
+  var lat = $( "#lat" ).val();
+  var lng =$( "#lng" ).val();
+  var error = "Please make sure 'Name', 'Address', 'Latitude' and 'Longitude' are filled in before submitting a new place."
+  if (!name || !address || !lat || !lng){
+    window.alert(error);
+    return false;
+  };
+};
 // Map Functions End
 
 
@@ -190,7 +202,7 @@ $( "#generate" ).click(function() {
 
 $( "#add-place" ).click(function() {
   var name = $('#name').val();
-  if (name != "") {
+  if (isDataNull()) {
     $.ajax({
       url: '/data',
       type: 'POST',
@@ -206,7 +218,7 @@ $( "#add-place" ).click(function() {
         findPlaces(customRadius(), customCoords());
       }
     })
-  }; 
+  };
 });
 
 // jQuery End
