@@ -71,17 +71,14 @@ function findPlaces(radius, coords) {
 
     $.getJSON('/data', function(data) {
 
-      if (typeof marker !== 'undefined') {
-        markers.eachLayer(function (layer) {
-          map.removeLayer(layer);
-        });
-      };
+      resetMarkers();
 
       markers = L.layerGroup([]);
 
       for (i=0; i < data.length; i++) {
 
-        if (data[i].coords == null) { continue; };
+        if (data[i].coords == null) { continue; }; // Stops loop breaking if 
+                                                   // null data is present
         
         var coordsDifference = distance(coords[0], coords[1], data[i].coords[0], data[i].coords[1]);
         if (coordsDifference < radius) {
@@ -105,6 +102,14 @@ function findPlaces(radius, coords) {
       }; // End of for loop
 
     });
+};
+
+function resetMarkers() {
+  if (typeof marker !== 'undefined') {
+    markers.eachLayer(function (layer) {
+      map.removeLayer(layer);
+    });
+  };
 };
 // Marker Placement
 
