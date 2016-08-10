@@ -166,7 +166,8 @@ function customRadius() {
 function customCoords() {
   var address = $( '#choose-radius-address' ).val();
   if (address == '') {
-    return [userLat, userLon]
+    isLocationNull();
+    return [userLat, userLon];
   } else {
     return coords;
   };
@@ -192,6 +193,12 @@ function isDataNull() {
   if (!name || !address || !lat || !lng){
     window.alert(error);
     return false;
+  };
+};
+
+function isLocationNull() {
+  if (typeof userLat === 'undefined') {
+    window.alert("Location can not be found during search. Please enter a valid address");
   };
 };
 // Map Functions End
