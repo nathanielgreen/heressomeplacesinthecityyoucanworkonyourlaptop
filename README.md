@@ -55,4 +55,5 @@ Bugs with a strikethrough have been fixed for the current version.
 - [x] ~~If a postcode is present 'Search Near Me' button still uses that
   address~~
 - [x] ~~Null data (empty fields) can be entered into the database.~~
+- [x] ~~Markers not showing up when search without a temp marker.~~
  
