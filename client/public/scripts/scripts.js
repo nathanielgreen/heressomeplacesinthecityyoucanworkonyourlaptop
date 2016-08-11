@@ -72,6 +72,7 @@ function findPlaces(radius, coords) {
     $.getJSON('/data', function(data) {
 
       resetMarkers();
+      resetTempMarkers();
 
       markers = L.layerGroup([]);
 
@@ -109,15 +110,18 @@ function resetMarkers() {
     markers.eachLayer(function (layer) {
       map.removeLayer(layer);
     });
-  }
-  else if (typeof tempMarker !== 'undefined') {
+  };
+};
+
+function resetTempMarkers() {
+  if (typeof tempMarker !== 'undefined') {
     tempMarkers.eachLayer(function (layer) {
       map.removeLayer(layer); 
     });
   };
 };
 
-function tempMarker(lat, lng){
+function addTempMarker(lat, lng){
   tempMarkers = L.layerGroup([]);
   tempMarker = L.marker([lat, lng])
 
@@ -226,7 +230,8 @@ $( "#generate" ).click(function() {
   coordsFromAddress(address);
   $( "#lat" ).val(coords[0]);
   $( "#lng" ).val(coords[1]);
-  tempMarker(coords[0], coords[1]);
+  resetTempMarkers();
+  addTempMarker(coords[0], coords[1]);
 });
 
 $( "#add-place" ).click(function() {
