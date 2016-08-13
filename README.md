@@ -34,13 +34,14 @@ In no particular order:
 - [ ] Mobile View
 - [x] ~~Search Box (for specific places)~~
 - [x] ~~Search Defaults to Location and 1000m with no entries~~
-- [ ] Place Features (e.g. free wifi, chargings ports, kind staff)
+- [ ] Place Features (e.g. free wifi, chargings ports, kind staff) **in
+  progress**
 - [ ] Place Photos
 - [ ] Place Profiles
   - Rating
   - Written Reviews
   - Multiple Photos 
-- [ ] Users can add Places
+- [x] ~~Users can add Places~~
 - [ ] User Ratings
 - [ ] User Accounts
   - Rating History 
@@ -56,4 +57,5 @@ Bugs with a strikethrough have been fixed for the current version.
   address~~
 - [x] ~~Null data (empty fields) can be entered into the database.~~
 - [x] ~~Markers not showing up when search without a temp marker.~~
+- [ ] Location finder is outdated.
  
