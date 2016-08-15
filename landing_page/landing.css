@@ -1,5 +1,26 @@
 body {
+  color: #4c4d57;
   height: 100%;
   margin: 0;
   width: 100%;
+}
+
+.title {
+  border-bottom: solid;
+  border-color: #4c4d57;
+  font-family: 'Raleway', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#title-main {
+  width: 300px;
+  font-size: 52px
+}
+
+#main-title-div {
+  background: url('mapbackground2.png');
+  padding-top: 100px;
+  padding-bottom: 40px;
+
 }
