@@ -40,9 +40,10 @@ h1 {
   width: 100%;
 }
   .left-content {
-    border-radius: 5px;
     background: #f2f2f2;
+    border-radius: 5px;
     flex: 1;
+    height: 100%;
     overflow: hidden;
     padding-top: 20px;
     text-align: center;
@@ -154,11 +155,43 @@ h1 {
     }
 
 @media screen and (max-width: 720px) {
-  .right-content {
-    flex: 1;
+  .wrapper {
+    display: inline;
+    margin: 0;
+
+    height: 100px;
+    width: 100%;
+  }
+  #add-new-div {
+    display: none;
+  }
+  .left-content {
+    height: 30%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #left-header {
+    padding: 5px;
+  }
+  #left-content {
+    height: 30%;
+    padding: 5px;
     margin: 0;
   }
+  .right-content {
+    margin: 0;
+    height: 70%;
+    width: 100%;
+  }
+  .content-break {
+    display: none;
+  }
+  #choose-radius-div {
+    padding: 5px;
+  }
 }
+
   
 /* Marker CSS */
 .leaflet-popup-content-wrapper {

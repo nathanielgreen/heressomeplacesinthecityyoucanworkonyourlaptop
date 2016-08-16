@@ -30,12 +30,12 @@ In no particular order:
 - [x] ~~Search 'Near Me' with specific radius~~
 - [x] ~~Locations are stored in the database and placed on the map~~
 - [x] ~~Temporary Marker placed when generating coordinates~~
-- [ ] Landing Page **in progress**
-- [ ] Mobile View
 - [x] ~~Search Box (for specific places)~~
 - [x] ~~Search Defaults to Location and 1000m with no entries~~
+- [ ] Landing Page **in progress**
 - [ ] Place Features (e.g. free wifi, chargings ports, kind staff) **in
   progress**
+- [ ] Mobile View **in progress**
 - [ ] Place Photos
 - [ ] Place Profiles
   - Rating
