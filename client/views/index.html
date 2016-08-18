@@ -36,7 +36,7 @@
 <body>
   <div class="wrapper">
 
-
+      <!-- Left Side Options Start --> 
       <div class="left-content">
 
         <div id="left-header">
@@ -44,7 +44,8 @@
         </div>
 
         <hr class="content-break">
-
+        
+        <!-- Place Search Start -->
         <div id="choose-radius-div">
           <div class="choose-radius-div">
             <input id="choose-radius-text" type="text" 
@@ -55,15 +56,19 @@
             <button id="choose-radius-button">Search</button>
           </div>
         </div>
+        <!-- Place Search End -->
 
         <hr class="content-break">
-
+  
+        <!-- Add New Place Start -->
         <div id="add-new-div">
           <h3> Add a New Place </h3>
           <div class="add-new-div">
             <input class="add-new-text" id="name"    type="text" placeholder="Name">
             <input class="add-new-text" id="address" type="text" placeholder="Address">
           </div>
+          
+          <!-- Capacity Rating Start -->
           <div class="add-new-div">
             <div class="rating-div">
               <div class="rating-button">
@@ -88,6 +93,9 @@
               </div>
             </div>
           </div>
+          <!-- Capacity Rating End -->
+
+          <!-- Coordinate Generation and Buttons Start -->
           <div class="add-new-div">
             <input class="add-new-text" id="lat" type="text" placeholder="Latitude">
             <input class="add-new-text" id="lng" type="text" placeholder="Longitude">
@@ -102,14 +110,21 @@
               <span class="add-new-span">Place</span>
             </button>
           </div>
+          <!-- Coordinate Generation and Buttons End -->
+
         </div>
+        <!-- Add New Place End -->
 
       </div>
+      <!-- Left Side Options End -->
 
+
+      <!-- Right Side Map Start -->
       <div class="right-content">
         <div id='map'>
         </div>
       </div>
+      <!-- Right Side Map End -->
 
 
   </div>
