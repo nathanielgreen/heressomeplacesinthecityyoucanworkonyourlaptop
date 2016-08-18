@@ -245,6 +245,7 @@ $( "#add-place" ).click(function() {
         'lat': $( "#lat" ).val(),
         'lng': $( "#lng" ).val(),
         'notes': $( "#notes" ).val(),
+        'capacity': capacity
       },
       success: function(){
         console.log("post worked");
