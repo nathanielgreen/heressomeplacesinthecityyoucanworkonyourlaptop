@@ -35,6 +35,7 @@ In no particular order:
 - [ ] Landing Page **in progress**
 - [ ] Place Features (e.g. free wifi, chargings ports, kind staff) **in
   progress**
+  - [x] ~~Capacity~~
 - [ ] Mobile View **in progress**
 - [ ] Place Photos
 - [ ] Place Profiles
@@ -57,5 +58,6 @@ Bugs with a strikethrough have been fixed for the current version.
   address~~
 - [x] ~~Null data (empty fields) can be entered into the database.~~
 - [x] ~~Markers not showing up when search without a temp marker.~~
+- [x] ~~Adding places not working due to isDataNull never returning true~~.
 - [ ] Location finder is outdated.
  
