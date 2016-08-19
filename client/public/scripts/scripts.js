@@ -197,7 +197,9 @@ function isDataNull() {
   if (!name || !address || !lat || !lng){
     window.alert(error);
     return false;
-  };
+  } else {
+    return true;
+  }
 };
 
 function isLocationNull() {
@@ -206,16 +208,10 @@ function isLocationNull() {
   };
 };
 
-function es6test() {
-  var a = 5;
-  var b = 10;
-  console.log(`Fifteen is ${a + b}.`);
-};
-
 function isBoxChecked(box) {
   for (i=1; i < 6; i++) {
     if(document.getElementById(`${box}${i}`).checked) {
-      return i;
+      return Number(i);
     };
   };
 };
@@ -250,6 +246,7 @@ $( "#generate" ).click(function() {
 
 $( "#add-place" ).click(function() {
   var name = $('#name').val();
+  var capacity = isBoxChecked('capacity');
   if (isDataNull()) {
     $.ajax({
       url: '/data',
@@ -258,7 +255,6 @@ $( "#add-place" ).click(function() {
         'name': name,
         'lat': $( "#lat" ).val(),
         'lng': $( "#lng" ).val(),
-        'notes': $( "#notes" ).val(),
         'capacity': capacity
       },
       success: function(){
