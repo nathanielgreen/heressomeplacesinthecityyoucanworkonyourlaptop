@@ -205,6 +205,20 @@ function isLocationNull() {
     window.alert("Location can not be found during search. Please enter a valid address");
   };
 };
+
+function es6test() {
+  var a = 5;
+  var b = 10;
+  console.log(`Fifteen is ${a + b}.`);
+};
+
+function isBoxChecked(box) {
+  for (i=1; i < 6; i++) {
+    if(document.getElementById(`${box}${i}`).checked) {
+      return i;
+    };
+  };
+};
 // Map Functions End
 
 
