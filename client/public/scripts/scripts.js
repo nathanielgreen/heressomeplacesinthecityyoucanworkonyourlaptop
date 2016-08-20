@@ -159,7 +159,7 @@ function resetView(radius, address) {
 };
 
 function customRadius() {
-  var radius = $( '#choose-radius-text' ).val();
+  var radius = document.querySelector("#choose-radius-text").value;
   if (radius == '') {
     return 1000
   } else {
@@ -168,7 +168,7 @@ function customRadius() {
 };
 
 function customCoords() {
-  var address = $( '#choose-radius-address' ).val();
+  var address = document.querySelector("#choose-radius-address").value;
   if (address == '') {
     isLocationNull();
     return [userLat, userLon];
@@ -178,7 +178,7 @@ function customCoords() {
 };
 
 function coordsFromAddress(address) {
-  var addingAddress = $( '#address' ).val();
+  var addingAddress = document.querySelector("#address").value;
   $.getJSON(
     'https://maps.googleapis.com/maps/api/geocode/json?address=' 
     + address 
@@ -189,10 +189,10 @@ function coordsFromAddress(address) {
 };
 
 function isDataNull() {
-  var name = $('#name').val();
-  var address = $( "#address" ).val();
-  var lat = $( "#lat" ).val();
-  var lng =$( "#lng" ).val();
+  var name = document.querySelector("#name").value;
+  var address = document.querySelector("#address").value;
+  var lat = document.querySelector("#address").value;
+  var lng = document.querySelector("#address").value;
   var error = "Please make sure 'Name', 'Address', 'Latitude' and 'Longitude' are filled in before submitting a new place."
   if (!name || !address || !lat || !lng){
     window.alert(error);
@@ -210,7 +210,7 @@ function isLocationNull() {
 
 function isBoxChecked(box) {
   for (i=1; i < 6; i++) {
-    if(document.getElementById(`${box}${i}`).checked) {
+    if(document.querySelector(`#${box}${i}`).checked) {
       return Number(i);
     };
   };
@@ -220,15 +220,19 @@ function isBoxChecked(box) {
 
 
 // jQuery
-$( "#choose-radius-address" ).keyup(function() {
-  var address = $( "#choose-radius-address" ).val();
-  coordsFromAddress(address);
-});
+document.querySelector("#choose-radius-address").addEventListener("keyup",
+  function() {
+    var address = $( "#choose-radius-address" ).val();
+    coordsFromAddress(address);
+  }
+);
 
-$( "#address" ).keyup(function() {
-  var address = $( "#address" ).val();
-  coordsFromAddress(address);
-});
+document.querySelector("#address").addEventListener("keyup",
+  function() {
+    var address = $( "#address" ).val();
+    coordsFromAddress(address);
+  }
+);
 
 document.querySelector("#choose-radius-button").addEventListener("click", 
   function() {
