@@ -91,7 +91,7 @@ function findPlaces(radius, coords) {
             "<div class='markerPopup'>" 
               + data[i].name  
               + "<li>"
-                + data[i].notes
+                + `Capacity: ${data[i].capacity}/5`
               + "</li>"
             + "</div>"
           );
@@ -225,10 +225,11 @@ $( "#choose-radius-address" ).keyup(function() {
   coordsFromAddress(address);
 });
 
-$( "#choose-radius-button" ).click(function() {
+document.querySelector("#choose-radius-button").addEventListener("click", function() {
   resetView(customRadius(), customCoords());
   findPlaces(customRadius(), customCoords());
 });
+
 
 $( "#address" ).keyup(function() {
   var address = $( "#address" ).val();
