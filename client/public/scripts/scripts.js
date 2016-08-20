@@ -225,25 +225,28 @@ $( "#choose-radius-address" ).keyup(function() {
   coordsFromAddress(address);
 });
 
-document.querySelector("#choose-radius-button").addEventListener("click", function() {
-  resetView(customRadius(), customCoords());
-  findPlaces(customRadius(), customCoords());
-});
-
-
 $( "#address" ).keyup(function() {
   var address = $( "#address" ).val();
   coordsFromAddress(address);
 });
 
-$( "#generate" ).click(function() {
-  var address = $( "#address" ).val();
-  coordsFromAddress(address);
-  $( "#lat" ).val(coords[0]);
-  $( "#lng" ).val(coords[1]);
-  resetTempMarkers();
-  addTempMarker(coords[0], coords[1]);
-});
+document.querySelector("#choose-radius-button").addEventListener("click", 
+  function() {
+    resetView(customRadius(), customCoords());
+    findPlaces(customRadius(), customCoords());
+  }
+);
+
+document.querySelector("#generate").addEventListener("click",
+  function() {
+    var address = document.querySelector("#address").value;    
+    coordsFromAddress(address);
+    document.querySelector("#lat").value = coords[0]; 
+    document.querySelector("#lng").value = coords[1]; 
+    resetTempMarkers();
+    addTempMarker(coords[0], coords[1]);
+  }
+);
 
 $( "#add-place" ).click(function() {
   var name = $('#name').val();
