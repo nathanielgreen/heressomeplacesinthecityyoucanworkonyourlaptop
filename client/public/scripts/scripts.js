@@ -82,8 +82,8 @@ function findPlaces(radius, coords) {
                                                    // null data is present
         
         var coordsDifference = distance(coords[0], coords[1], data[i].coords[0], data[i].coords[1]);
-        if (coordsDifference < radius) {
 
+        if (coordsDifference < radius) {
           marker = L.marker([data[i].coords[0], data[i].coords[1]])
           markers.addLayer(marker);
           console.log(markers);
@@ -252,26 +252,27 @@ document.querySelector("#generate").addEventListener("click",
   }
 );
 
-$( "#add-place" ).click(function() {
-  var name = $('#name').val();
-  var capacity = isBoxChecked('capacity');
-  if (isDataNull()) {
-    $.ajax({
-      url: '/data',
-      type: 'POST',
-      data: {
-        'name': name,
-        'lat': $( "#lat" ).val(),
-        'lng': $( "#lng" ).val(),
-        'capacity': capacity
-      },
-      success: function(){
-        console.log("post worked");
-        resetView(customRadius(), customCoords());
-        findPlaces(customRadius(), customCoords());
-      }
-    })
-  };
+document.querySelector("#add-place").addEventListener("click",
+  function() {
+    var name = $('#name').val();
+    var capacity = isBoxChecked('capacity');
+    if (isDataNull()) {
+      $.ajax({
+        url: '/data',
+        type: 'POST',
+        data: {
+          'name': name,
+          'lat': $( "#lat" ).val(),
+          'lng': $( "#lng" ).val(),
+          'capacity': capacity
+        },
+        success: function(){
+          console.log("post worked");
+          resetView(customRadius(), customCoords());
+          findPlaces(customRadius(), customCoords());
+        }
+      })
+    };
 });
 
 // jQuery End
