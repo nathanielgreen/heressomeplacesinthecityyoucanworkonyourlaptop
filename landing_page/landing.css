@@ -6,6 +6,11 @@ body {
   width: 100%;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .title {
   border-bottom: solid;
   border-color: #4c4d57;
@@ -38,12 +43,35 @@ body {
 }
 
 #about-div {
-  background: url(mapbackground2.png);
   font-size: 26px;
   padding: 50px;
 }
 
 #live-site-div {
   font-size: 26px;
+  background: #f2f2f2;
   padding: 50px;
 }
+
+#live-site {
+  display: flex;
+}
+
+.live-site-button {
+  background: #4c4d57;
+  border: solid;
+  border-color: #4c4d57;
+  border-width: 4px;
+  color: #fff;
+  flex: 1;
+  font-size: 22px;
+  margin: 20px;
+  padding: 20px;
+}
+  .live-site-button:hover {
+    background: #fff;
+    color: #4c4d57;
+  }
+
+
+
