@@ -222,14 +222,14 @@ function isBoxChecked(box) {
 // jQuery
 document.querySelector("#choose-radius-address").addEventListener("keyup",
   function() {
-    var address = $( "#choose-radius-address" ).val();
+    var address = document.querySelector("#choose-radius-address").value;
     coordsFromAddress(address);
   }
 );
 
 document.querySelector("#address").addEventListener("keyup",
   function() {
-    var address = $( "#address" ).val();
+    var address = document.querySelector("#address").value;
     coordsFromAddress(address);
   }
 );
