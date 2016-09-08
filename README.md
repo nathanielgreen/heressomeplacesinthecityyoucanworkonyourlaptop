@@ -60,5 +60,5 @@ Bugs with a strikethrough have been fixed for the current version.
 - [x] ~~Markers not showing up when search without a temp marker.~~
 - [x] ~~Adding places not working due to isDataNull never returning true~~.
 - [ ] Location finder is outdated.
-- [ ] Second coordinate being returned NaN for leaflet.
+- [x] Second coordinate being returned NaN for leaflet.
  
