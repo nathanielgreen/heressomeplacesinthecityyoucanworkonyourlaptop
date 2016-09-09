@@ -256,6 +256,7 @@ document.querySelector("#add-place").addEventListener("click",
   function() {
     var name = $('#name').val();
     var capacity = isBoxChecked('capacity');
+    var wifi     = isBoxChecked('wifi');
     if (isDataNull()) {
       $.ajax({
         url: '/data',
@@ -264,7 +265,8 @@ document.querySelector("#add-place").addEventListener("click",
           'name': name,
           'lat': $( "#lat" ).val(),
           'lng': $( "#lng" ).val(),
-          'capacity': capacity
+          'capacity': capacity,
+          'wifi': wifi
         },
         success: function(){
           console.log("post worked");
