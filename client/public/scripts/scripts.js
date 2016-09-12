@@ -93,6 +93,12 @@ function findPlaces(radius, coords) {
               + "<li>"
                 + `Capacity: ${data[i].capacity}/5`
               + "</li>"
+              + "<li>"
+                + `Wifi: ${data[i].wifi}/5`
+              + "</li>"
+              + "<li>"
+                + `Price: ${data[i].price}/5`
+              + "</li>"
             + "</div>"
           );
         } 
