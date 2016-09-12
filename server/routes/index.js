@@ -61,7 +61,8 @@ router.post('/data', function(req, res) {
     }
 
     // SQL Query > Update Data
-    client.query("INSERT INTO places(name, coords, capacity, wifi) values($1, array[$2, $3], $4, $5)", [data.text.name, data.text.lat, data.text.lng, data.text.capacity, data.text.wifi]);
+    client.query("INSERT INTO places(name, coords, capacity, wifi, price) values($1, array[$2, $3], $4, $5, $6)", 
+      [data.text.name, data.text.lat, data.text.lng, data.text.capacity, data.text.wifi, data.text.price]);
 
     // SQL Query > Select Data
     var query = client.query("SELECT * FROM places");
