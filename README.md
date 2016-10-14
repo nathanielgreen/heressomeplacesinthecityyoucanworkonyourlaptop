@@ -1,16 +1,18 @@
 # Remote Me
-##### (Name is Under Construction)
 
 *Remote Me*, (previously *Here's Some Places In The City You Can Work On Your Laptop* (HSPITCYCWOYL)) is a
 web app that allows users to find, list, and rate areas in their city that are
 laptop-work friendly areas (such as cafes, bars & hotels). All locations will be
 listed on the interactive map.
 
+
 ## Live Version
 
-A live interactive version of the project is available at
-http://remoteme.herokuapp.com .
+A live interactive version of the project is currently unavailable whilst the
+project undergoes some critical changes.
+
 **NOTE:** Live version may not be the most up-to-date version of the project.
+
 
 ## Techonologies Used 
 
@@ -20,8 +22,11 @@ http://remoteme.herokuapp.com .
 - Node.js
 - Express
 - PostgreSQL
+- Angular (Mobile Version)
+- Ionic (Mobile Version)
 
-## Future Features
+
+## Features Set
 
 Features with a strikethrough have been implemented.
 
@@ -32,7 +37,6 @@ In no particular order:
 - [x] ~~Temporary Marker placed when generating coordinates~~
 - [x] ~~Search Box (for specific places)~~
 - [x] ~~Search Defaults to Location and 1000m with no entries~~
-- [ ] Landing Page **in progress**
 - [ ] Place Features (e.g. free wifi, chargings ports, kind staff) **in
   progress**
   - [x] ~~Capacity~~
@@ -49,6 +53,7 @@ In no particular order:
 - [ ] User Accounts
   - Rating History 
   - Review History
+
 
 ## Known Bugs
 
