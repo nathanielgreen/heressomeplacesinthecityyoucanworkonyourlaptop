@@ -34,179 +34,36 @@
   src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/markers.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/mobile.css">
+  <link rel="stylesheet/less" type="text/css" href="stylesheets/less/main.less" />
 </head>
 
 <body>
+  <!-- Main Wrapper -->
   <div class="wrapper">
 
-      <!-- Left Side Options Start --> 
-      <div class="left-content">
+    <!-- Left Side Options  --> 
+    <div class="left-content" id="menu">
+      test
+    </div>
+    <div class="left-content" id="options">
+    </div>
+    <!-- Left Side Options End --> 
 
-        <div id="left-header">
-          <h1> RemoteMe </h1>
-        </div>
-
-        <hr class="content-break">
-        
-
-        <!-- Place Search Start -->
-        <div id="choose-radius-div">
-          <div class="choose-radius-div">
-            <input id="choose-radius-text" type="text" 
-            placeholder="radius (m) (1000m default)">
-            <input id="choose-radius-address" type="text" placeholder="Address">
-          </div>
-          <div class="choose-radius-div">
-            <button id="choose-radius-button">Search</button>
-          </div>
-        </div>
-        <!-- Place Search End -->
-
-
-        <hr class="content-break">
-  
-
-        <!-- Add New Place Start -->
-        <div id="add-new-div">
-          <h3> Add a New Place </h3>
-          <div class="add-new-div">
-            <input class="add-new-text" id="name"    type="text" placeholder="Name">
-            <input class="add-new-text" id="address" type="text" placeholder="Address">
-          </div>
-          
-
-          <!-- Capacity Rating Start -->
-          <div class="add-new-div">
-            <h5> Capacity: </h5>
-            <div class="rating-div">
-              Low
-              <div class="rating-button">
-                <input id="capacity1" type="radio" name="capacity-rating" value="1" />
-                <label for="capacity1">1</label>
-              </div>
-              <div class="rating-button">
-                <input id="capacity2" type="radio" name="capacity-rating" value="2" />
-                <label for="capacity2">2</label>
-              </div>
-              <div class="rating-button">
-                <input id="capacity3" type="radio" name="capacity-rating" value="3" />
-                <label for="capacity3">3</label>
-              </div>
-              <div class="rating-button">
-                <input id="capacity4" type="radio" name="capacity-rating" value="4" />
-                <label for="capacity4">4</label>
-              </div>
-              <div class="rating-button">
-                <input id="capacity5" type="radio" name="capacity-rating" value="5" />
-                <label for="capacity5">5</label>
-              </div>
-              High
-            </div>
-          </div>
-          <!-- Capacity Rating End -->
-
-          <!-- Wifi Rating Start -->
-          <div class="add-new-div">
-            <h5> Wifi: </h5>
-            <div class="rating-div">
-            Weak
-              <div class="rating-button">
-                <input id="wifi1" type="radio" name="wifi-rating" value="1" />
-                <label for="wifi1">1</label>
-              </div>
-              <div class="rating-button">
-                <input id="wifi2" type="radio" name="wifi-rating" value="2" />
-                <label for="wifi2">2</label>
-              </div>
-              <div class="rating-button">
-                <input id="wifi3" type="radio" name="wifi-rating" value="3" />
-                <label for="wifi3">3</label>
-              </div>
-              <div class="rating-button">
-                <input id="wifi4" type="radio" name="wifi-rating" value="4" />
-                <label for="wifi4">4</label>
-              </div>
-              <div class="rating-button">
-                <input id="wifi5" type="radio" name="wifi-rating" value="5" />
-                <label for="wifi5">5</label>
-              </div>
-              Strong
-            </div>
-          </div>
-          <!-- Wifi Rating End -->
-
-          <!-- Price Rating Start -->
-          <div class="add-new-div">
-            <h5> Price: </h5>
-            <div class="rating-div">
-              Cheap
-              <div class="rating-button">
-                <input id="price1" type="radio" name="price-rating" value="1" />
-                <label for="price1">1</label>
-              </div>
-              <div class="rating-button">
-                <input id="price2" type="radio" name="price-rating" value="2" />
-                <label for="price2">2</label>
-              </div>
-              <div class="rating-button">
-                <input id="price3" type="radio" name="price-rating" value="3" />
-                <label for="price3">3</label>
-              </div>
-              <div class="rating-button">
-                <input id="price4" type="radio" name="price-rating" value="4" />
-                <label for="price4">4</label>
-              </div>
-              <div class="rating-button">
-                <input id="price5" type="radio" name="price-rating" value="5" />
-                <label for="price5">5</label>
-              </div>
-              Expensive
-            </div>
-          </div>
-          <!-- Price Rating End -->
-
-
-          <!-- Coordinate Generation and Buttons Start -->
-          <div class="add-new-div">
-            <input class="add-new-text" id="lat" type="text" placeholder="Latitude">
-            <input class="add-new-text" id="lng" type="text" placeholder="Longitude">
-          </div>
-          <div class="add-new-div">
-            <button class="add-new-button" id="generate">
-              <span class="add-new-span">Generate</span>
-              <span class="add-new-span">Coordinates</span>
-            </button>
-            <button class="add-new-button" id="add-place">
-              <span class="add-new-span">Add</span> 
-              <span class="add-new-span">Place</span>
-            </button>
-          </div>
-          <!-- Coordinate Generation and Buttons End -->
-
-
-        </div>
-        <!-- Add New Place End -->
-
-
+    <!-- Right Side Map -->
+    <div class="right-content">
+      <div id='map'>
       </div>
-      <!-- Left Side Options End -->
-
-
-      <!-- Right Side Map Start -->
-      <div class="right-content">
-        <div id='map'>
-        </div>
-      </div>
-      <!-- Right Side Map End -->
-
+    </div>
+    <!-- Right Side Map End -->
 
   </div>
+  <!-- Main Wrapper End -->
 
   <!-- Scripts --> 
   <script src="scripts/token.js"></script>
-  <script src="scripts/scripts.js"></script>
+  <script src="scripts/scripts.js" type="text/javascript"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
 </body>
 </html>

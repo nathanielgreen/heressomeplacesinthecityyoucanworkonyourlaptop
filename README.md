@@ -1,5 +1,7 @@
 # Remote Me
 
+*NOTE: RemoteMe is currently undergoing very heavy redevelopment*
+
 *Remote Me*, (previously *Here's Some Places In The City You Can Work On Your Laptop* (HSPITCYCWOYL)) is a
 web app that allows users to find, list, and rate areas in their city that are
 laptop-work friendly areas (such as cafes, bars & hotels). All locations will be
@@ -19,11 +21,10 @@ project undergoes some critical changes.
 - Maps are built with Mapbox and Leaflet.js
 - Javascript
 - HTML & CSS
+- LESS
 - Node.js
 - Express
 - PostgreSQL
-- Angular (Mobile Version)
-- Ionic (Mobile Version)
 
 
 ## Features Set
