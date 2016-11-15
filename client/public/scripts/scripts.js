@@ -226,63 +226,63 @@ function isBoxChecked(box) {
 
 
 // jQuery
-document.querySelector("#choose-radius-address").addEventListener("keyup",
-  function() {
-    var address = document.querySelector("#choose-radius-address").value;
-    coordsFromAddress(address);
-  }
-);
+//document.querySelector("#choose-radius-address").addEventListener("keyup",
+  //function() {
+    //var address = document.querySelector("#choose-radius-address").value;
+    //coordsFromAddress(address);
+  //}
+//);
 
-document.querySelector("#address").addEventListener("keyup",
-  function() {
-    var address = document.querySelector("#address").value;
-    coordsFromAddress(address);
-  }
-);
+//document.querySelector("#address").addEventListener("keyup",
+  //function() {
+    //var address = document.querySelector("#address").value;
+    //coordsFromAddress(address);
+  //}
+//);
 
-document.querySelector("#choose-radius-button").addEventListener("click", 
-  function() {
-    resetView(customRadius(), customCoords());
-    findPlaces(customRadius(), customCoords());
-  }
-);
+//document.querySelector("#choose-radius-button").addEventListener("click", 
+  //function() {
+    //resetView(customRadius(), customCoords());
+    //findPlaces(customRadius(), customCoords());
+  //}
+//);
 
-document.querySelector("#generate").addEventListener("click",
-  function() {
-    var address = document.querySelector("#address").value;    
-    coordsFromAddress(address);
-    document.querySelector("#lat").value = coords[0]; 
-    document.querySelector("#lng").value = coords[1]; 
-    resetTempMarkers();
-    addTempMarker(coords[0], coords[1]);
-  }
-);
+//document.querySelector("#generate").addEventListener("click",
+  //function() {
+    //var address = document.querySelector("#address").value;    
+    //coordsFromAddress(address);
+    //document.querySelector("#lat").value = coords[0]; 
+    //document.querySelector("#lng").value = coords[1]; 
+    //resetTempMarkers();
+    //addTempMarker(coords[0], coords[1]);
+  //}
+//);
 
-document.querySelector("#add-place").addEventListener("click",
-  function() {
-    var name = $('#name').val();
-    var capacity = isBoxChecked('capacity');
-    var wifi     = isBoxChecked('wifi');
-    var price    = isBoxChecked('price');
-    if (isDataNull()) {
-      $.ajax({
-        url: '/data',
-        type: 'POST',
-        data: {
-          'name': name,
-          'lat': $( "#lat" ).val(),
-          'lng': $( "#lng" ).val(),
-          'capacity': capacity,
-          'wifi': wifi,
-          'price': price
-        },
-        success: function(){
-          console.log("post worked");
-          resetView(customRadius(), customCoords());
-          findPlaces(customRadius(), customCoords());
-        }
-      })
-    };
-});
+//document.querySelector("#add-place").addEventListener("click",
+  //function() {
+    //var name = $('#name').val();
+    //var capacity = isBoxChecked('capacity');
+    //var wifi     = isBoxChecked('wifi');
+    //var price    = isBoxChecked('price');
+    //if (isDataNull()) {
+      //$.ajax({
+        //url: '/data',
+        //type: 'POST',
+        //data: {
+          //'name': name,
+          //'lat': $( "#lat" ).val(),
+          //'lng': $( "#lng" ).val(),
+          //'capacity': capacity,
+          //'wifi': wifi,
+          //'price': price
+        //},
+        //success: function(){
+          //console.log("post worked");
+          //resetView(customRadius(), customCoords());
+          //findPlaces(customRadius(), customCoords());
+        //}
+      //})
+    //};
+//});
 
 // jQuery End
