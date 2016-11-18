@@ -226,26 +226,26 @@ function isBoxChecked(box) {
 
 
 // jQuery
-//document.querySelector("#choose-radius-address").addEventListener("keyup",
-  //function() {
-    //var address = document.querySelector("#choose-radius-address").value;
-    //coordsFromAddress(address);
-  //}
-//);
+document.querySelector("#find-place-location").addEventListener("keyup",
+  function() {
+    var address = document.querySelector("#find-place-location").value;
+    coordsFromAddress(address);
+  }
+);
 
-//document.querySelector("#address").addEventListener("keyup",
-  //function() {
-    //var address = document.querySelector("#address").value;
-    //coordsFromAddress(address);
-  //}
-//);
+document.querySelector("#find-place-radius").addEventListener("keyup",
+  function() {
+    var address = document.querySelector("#find-place-location").value;
+    coordsFromAddress(address);
+  }
+);
 
-//document.querySelector("#choose-radius-button").addEventListener("click", 
-  //function() {
-    //resetView(customRadius(), customCoords());
-    //findPlaces(customRadius(), customCoords());
-  //}
-//);
+document.querySelector("#find-place-button").addEventListener("click", 
+  function() {
+    resetView(customRadius(), customCoords());
+    findPlaces(customRadius(), customCoords());
+  }
+);
 
 //document.querySelector("#generate").addEventListener("click",
   //function() {
